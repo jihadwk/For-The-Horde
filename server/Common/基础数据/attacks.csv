@@ -1,0 +1,1 @@
+ID;UnitType;CheckRange;AniID;SoundName;DmgValue;IsMissle;MissleID唯一标记;unit 类型判定（是否是空军）;检测范围(是否在某个范围内);src播放动画;动画音效;攻击伤害值;是否有missle对象;missle 对象IDint;int;int ;int;String;int;Boolean;int0;-1;-1;3;NULL;10;TRUE;00;-1;-1;3;NULL;10;TRUE;00;-1;-1;3;NULL;10;TRUE;0

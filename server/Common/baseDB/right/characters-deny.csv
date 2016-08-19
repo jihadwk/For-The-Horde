@@ -1,0 +1,10 @@
+1,Barbarian,sc/characters.cs,1,1,200,25,1,1,40,1000,1,sc/ui.sc,icon_unit_barbarian,unit_barbarian_big,-1,Barbarian Deploy,0,0,1,-1,Barbarian Die
+2,Archer,sc/characters.cs,1,2,300,25,1,1,400,1000,1,sc/ui.sc,icon_unit_archer,unit_archer_big,-1,Archer Deploy,0,1,1,-1,Archer Die
+3,Goblin,sc/characters.cs,2,3,800,0,1,1,40,1000,2,sc/ui.sc,icon_unit_goblin,unit_goblin_big,1,Goblin Deploy,1,1,1,-1,Goblin Die
+4,Giant,sc/characters.cs,5,4,150,105,1,1,100,2000,1,sc/ui.sc,icon_unit_giant,unit_giant_big,2,Giant Deploy,0,0,1,-1,Giant Die
+5,Wall Breaker,sc/characters.cs,1,5,300,120,1,1,50,1000,40,sc/ui.sc,icon_unit_wallbreaker,unit_skeleton_big,3,Wall Breaker Deploy,0,0,1,1,Wall Breaker Die
+6,Balloon Goblin,sc/characters.cs,5,6,150,600,1,1,50,4000,1,sc/ui.sc,icon_unit_balloon,unit_balloon_big,2,Balloon Goblin Deploy,1,0,1,-1,Balloon Goblin Die
+7,Wizard,sc/characters.cs,4,7,200,600,1,1,300,1500,1,sc/ui.sc,icon_unit_wizard,unit_wizard_big,-1,Wizard Deploy,0,1,1,-1,Wizard Die
+8,Healer,sc/characters.cs,20,8,200,1200,1,1,400,700,1,sc/ui.sc,icon_unit_healer,unit_healer_big,-1,Healer Deploy,1,0,1,-1,Healer Die
+9,Dragon,sc/characters.cs,20,9,200,1800,1,1,300,1500,1,sc/ui.sc,icon_unit_dragon,unit_dragon_big,-1,Dragon Deploy,1,1,1,-1,Dragon Die
+10,PEKKA,sc/characters.cs,25,10,200,3600,1,1,80,2500,1,sc/ui.sc,icon_unit_pekka,unit_pekka_big,-1,Pekka Deploy,0,0,1,-1,Pekka Die
