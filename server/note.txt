@@ -1,0 +1,22 @@
+ClassPathXmlApplicationContext:通过CLASSPATH路径搜索配置文件
+FileSystemXmlApplicationContext:在当前路径搜索配置文件
+java.util.concurrent.atomic
+这个包里面提供了一组原子类。其基本的特性就是在多线程环境下，当有多个线程同时执行这些类的实例包含的方法时，具有排他性，即当某个线程进入方法，执行其中的指令时，不会被其他线程打断，而别的线程就像自旋锁一样，一直等到该方法执行完成，才由JVM从等待队列中选择一个另一个线程进入，这只是一种逻辑上的理解。
+AtomicBoolean , AtomicInteger, AtomicLong, AtomicReference
+这四种基本类型用来处理布尔，整数，长整数，对象四种数据。
+构造函数（两个构造函数）
+默认的构造函数：初始化的数据分别是false，0，0，null
+带参构造函数：参数为初始化的数据
+set( )和get( )方法：可以原子地设定和获取atomic的数据。类似于volatile，保证数据会在主存中设置或读取
+getAndSet( )方法
+原子的将变量设定为新数据，同时返回先前的旧数据
+其本质是get( )操作，然后做set( )操作。尽管这2个操作都是atomic，但是他们合并在一起的时候，就不是atomic。在Java的源程序的级别上，如果不依赖synchronized的机制来完成这个工作，是不可能的。只有依靠native方法才可以。
+compareAndSet( ) 和weakCompareAndSet( )方法
+这两个方法都是conditional modifier方法。这2个方法接受2个参数，一个是期望数据(expected)，一个是新数据(new)；如果atomic里面的数据和期望数据一致，则将新数据设定给atomic的数据，返回true，表明成功；否则就不设定，并返回false。
+对于AtomicInteger、AtomicLong还提供了一些特别的方法。getAndIncrement( )、incrementAndGet( )、getAndDecrement( )、decrementAndGet ( )、addAndGet( )、getAndAdd( )以实现一些加法，减法原子操作。(注意 --i、++i不是原子操作，其中包含有3个操作步骤：第一步，读取i；第二步，加1或减1；第三步：写回内存)
+
+java.util.ResourceBundle使用详解
+   java中读取配置文件的信息可以采用properties这个类，但是当遇到国际化问题的时候还是不好解决，因而还是最好使用 ResourceBundle这个类，其实ResourceBundle本质上和Properties一样也是一个映射，都是以键值对的形式保存信息，但 是其显得更加灵活，当调用ResourceBundle res=ResourceBundle.getBundle("area", Locale.CHINA);
+       String input= res.getString("25");
+       System.out.println(input);
+的时候程序回自动查找类路径下名字为area_zh.properties的文件，进而找出键值为25的内容，该内容以iso8859编码保存，但 是由于指定了ResourceBundle res=ResourceBundle.getBundle("area", Locale.CHINA)，因而在我们调用getString方法的时候会得到键值为25对应内容的中文格式

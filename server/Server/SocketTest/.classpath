@@ -10,5 +10,7 @@
 	<classpathentry kind="lib" path="lib/dnsjava-2.0.1.jar"/>
 	<classpathentry kind="lib" path="lib/log/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="lib/IsEMail.jar"/>
+	<classpathentry kind="lib" path="lib/log/slf4j-api-1.6.4.jar"/>
+	<classpathentry kind="lib" path="lib/log/slf4j-log4j12-1.6.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

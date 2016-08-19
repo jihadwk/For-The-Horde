@@ -5,17 +5,20 @@ import com.commonSocket.net.util.Report;
 
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class AppContext
 {
+	//加载spring配置，搜索根目录
   private FileSystemXmlApplicationContext context;
   private AtomicBoolean started = new AtomicBoolean(false);
-  private Logger logger = Logger.getLogger(getClass());
+  private Logger logger = LoggerFactory.getLogger(getClass());
   private static AppContext instance;
-
+//同步，同一时间只有一个线程可以执行，执行完之前不可中断
   public static synchronized AppContext getInstance()
   {
     if (instance == null) {
@@ -47,8 +50,8 @@ public class AppContext
         if (this.logger.isDebugEnabled()) {
           this.logger.debug(contextFilePath + "/*.xml");
         }
-//        this.context = new FileSystemXmlApplicationContext(System.getProperty("user.dir") + new StringBuilder(String.valueOf(contextFilePath)).append("/*.xml").toString());
-          this.context = new FileSystemXmlApplicationContext("File:" + System.getProperty("user.dir") + new StringBuilder(String.valueOf(contextFilePath)).append("/*.xml").toString());
+        this.context = new FileSystemXmlApplicationContext(new StringBuilder(String.valueOf(contextFilePath)).append("/*.xml").toString());
+//          this.context = new FileSystemXmlApplicationContext("File:" + System.getProperty("user.dir") + new StringBuilder(String.valueOf(contextFilePath)).append("/*.xml").toString());
       }
     } catch (Exception e) {
     	e.printStackTrace();
