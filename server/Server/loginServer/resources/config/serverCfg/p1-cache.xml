@@ -2,8 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-	<bean id="propertyConfigurer" class="com.bw.cache.utils.PropertiesForJar">
+	<bean id="propertyConfigurer" class="com.bw.cache.utils.PropertiesForJar"><!-- 配置元数据 -->
 	</bean>
+	<!-- c3p0连接池配置 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="${jdbc.driver}" />
@@ -32,7 +33,7 @@
 		<property name="maxIdleTimeExcessConnections"
 			value="${jdbc.maxIdleTimeExcessConnections}" />
 	</bean>
-	<bean id="dataSourceBank" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+	<!-- <bean id="dataSourceBank" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="${jdbc.driver}" />
 		<property name="jdbcUrl" value="${jdbc.bank.url}" />
@@ -45,7 +46,7 @@
 		<property name="acquireIncrement" value="${jdbc.acquireIncrement}" />
 		<property name="maxIdleTimeExcessConnections"
 			value="${jdbc.maxIdleTimeExcessConnections}" />
-	</bean>	
+	</bean>	 -->
 
 	<bean id="cityMemCachedClient" class="com.bw.cache.CityMemCachedClient">
 		<property name="memcachedClient" ref="memcachedClient" />

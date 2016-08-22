@@ -25,7 +25,7 @@ public class SocketServerMain implements Runnable {
 		try {
 //			ServerSocket serversocket = new ServerSocket(8989);
 			ServerSocket serversocket = new ServerSocket();
-			SocketAddress sa=new InetSocketAddress("192.168.16.12",8989);
+			SocketAddress sa=new InetSocketAddress("192.168.1.107",8989);
 			serversocket.bind(sa);
             System.out.println("socket 测试开始 .......");
 			while (true) {

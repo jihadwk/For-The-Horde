@@ -4,7 +4,7 @@
 <beans>
 	<!-- 用户模块 ACTION -->
 	<bean name="userLoginAction" class="com.bw.application.action.UserLoginAction">
-	<property name="channelManager" ref="channelManager"></property>
+	<property name="channelManager"><ref bean="channelManager"/></property>
 	<property name="appConfig" ref="appConfig"></property>
 	<property name="userManager" ref="userManager"></property>	
 	<property name="commonCacheDAOImpl" ref="CommonCacheDAOImpl"></property>	
@@ -12,10 +12,10 @@
 	
 	</bean>
 	<bean name="registerChannelAction" class="com.bw.application.action.RegisterChannelAction">
-	<property name="channelManager" ref="channelManager"></property>
+	<property name="channelManager"><ref bean="channelManager"/></property>
 	</bean>
 	<bean name="AreaListAction" class="com.bw.application.action.AreaListAction">
-	<property name="channelManager" ref="channelManager"></property>
+	<property name="channelManager"><ref bean="channelManager"/></property>
 	</bean>	
 	
 	<bean name="FindUUIDClient" class="com.bw.application.client.FindUUIDClient" init-method="start">
